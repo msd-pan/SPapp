@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+/* 浮动盒子 */
+.box {
+  position: relative;
+}
+.box .square {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(-40px);
+  }
+
+  50% {
+    transform: translate(40px);
+  }
+}
+
+.box .square:nth-child(1) {
+  top: -20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+}
+.box .square:nth-child(2) {
+  top: 250px;
+  left: -300px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.box .square:nth-child(3) {
+  bottom: 1px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+.box .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+.box .square:nth-child(5) {
+  top: 80px;
+  left: 600px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+}
+.box .square:nth-child(6) {
+  top: 450px;
+  left: 700px;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+/* 该画面特有部分的样式 */
+.container1,
+.container2 {
+  position: absolute;
+  width: 480px;
+  height: 240px;
+}
+
+.container1,
+.container2 p {
+  font-size: small;
+}
+
+img {
+  cursor: pointer;
+  width: 200px;
+  border-radius: 20px;
+  display: inline;
+}
+
+.container1 {
+  top: 50px;
+}
+
+.container2 {
+  top: 300px;
+}
+
+.endDay1,
+.endDay2 {
+  position: absolute;
+  right: 20px;
+  top: 120px;
+}
+
+p.title1,
+p.title2 {
+  padding: 4px;
+}
+
+.pic2 {
+  width: 300px;
+}
+
+.footer {
+  position: absolute;
+  width: 600px;
+  height: 540px;
+  top: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.imgContainer {
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

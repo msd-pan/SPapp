@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <link rel="stylesheet" href="../css/register.css" />
+    <link rel="stylesheet" href="../css/tab.css" />
+  </head>
+  <body>
+    <!-- 消息弹窗 -->
+    <div class="registerPopup">
+      <div class="popMain">
+        <p id="errorMsg" class="main">登录成功，3秒后跳转到login画面</p>
+      </div>
+    </div>
+    <!-- 背景颜色窗子 -->
+    <section>
+      <div class="color" name="colorBox1"></div>
+      <div class="color" name="colorBox2"></div>
+      <div class="color" name="colorBox3"></div>
+    </section>
+    <div class="box">
+      <!-- 浮动磨砂盒子 -->
+      <div class="square" style="--i: 0"></div>
+      <div class="square" style="--i: 1"></div>
+      <div class="square" style="--i: 2"></div>
+      <div class="square" style="--i: 3"></div>
+      <div class="square" style="--i: 4"></div>
+      <div class="square" style="--i: 5"></div>
+    </div>
+    <div class="rg_center">
+      <form action="#" method="post">
+        <table>
+          <tr>
+            <td class="td_left"><label for="username">ユーザー名</label></td>
+            <td class="td_right">
+              <span class="necessary">※</span>
+              <input
+                type="text"
+                name="username"
+                placeholder="例：MSD太郎"
+                autocomplete="off"
+              />
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="email">メールアドレス</label></td>
+            <td class="td_right">
+              <span class="necessary">※</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="例：msdtarou@outlook.com"
+                autocomplete="off"
+              />
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="password">パスワード</label></td>
+            <td class="td_right">
+              <span class="necessary">※</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="8〜30桁数の数字、アルファベット、記号"
+                autocomplete="off"
+              />
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left">
+              <label for="passwordConfirm">パスワード(確認用)</label>
+            </td>
+            <td class="td_right">
+              <span class="necessary">※</span>
+              <input
+                type="password"
+                name="passwordConfirm"
+                placeholder="上で入力された内容と同じものを入力してください"
+                autocomplete="off"
+              />
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="postCode">郵便番号</label></td>
+            <td class="td_right">
+              <input
+                oninput="this.value=this.value.replace(/[^\d]/g,'').slice(0, 8)"
+                type="text"
+                name="postCode"
+                placeholder="「例：1234567"
+                autocomplete="off"
+              />
+              <button id="postBtn">探し</button>
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="address">住所</label></td>
+            <td class="td_right">
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="例：東京都東日暮里"
+                autocomplete="off"
+              />
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="gender">性別</label></td>
+            <td class="td_right">
+              <input type="radio" name="gender" value="male" checked="true" />
+              男 <input type="radio" name="gender" value="female" /> 女
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="birthday">生年月日</label></td>
+            <td class="td_right">
+              <input
+                type="date"
+                name="birthday"
+                value=""
+                min="1945-01-01"
+                max="2018-12-31"
+                id="myDateInput"
+              />
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left"><label for="phone">携帯番号</label></td>
+            <td class="td_right">
+              <span class="necessary">※</span>
+              <input
+                oninput="this.value=this.value.replace(/[^\d]/g,'').slice(0, 8)"
+                type="text"
+                name="phone"
+                placeholder="例：08012345678"
+                autocomplete="off"
+              />
+              <p class="warnningMsg"></p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input
+                type="submit"
+                id="btn_sub"
+                class="disabled"
+                value="登録"
+                onclick="jumpMyPage(event)"
+                disabled
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <script src="../js/tab.js"></script>
+    <script src="../js/register.js"></script>
+  </body>
+</html>

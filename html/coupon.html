@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>couponPage</title>
+    <link rel="stylesheet" href="../css/coupon.css" />
+    <link rel="stylesheet" href="../css/tab.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <!-- 浮动磨砂盒子 -->
+      <div class="square" style="--i: 0"></div>
+      <div class="square" style="--i: 1"></div>
+      <div class="square" style="--i: 2"></div>
+      <div class="square" style="--i: 3"></div>
+      <div class="square" style="--i: 4"></div>
+      <div class="square" style="--i: 5"></div>
+    </div>
+    <section>
+      <div class="color" name="colorBox1"></div>
+      <div class="color" name="colorBox2"></div>
+      <div class="color" name="colorBox3"></div>
+      <div class="navigation">
+        <ul>
+          <li class="logo">
+            <span class="logo"><img src="../pics/Logo.png" alt="Logo" /></span>
+          </li>
+          <li class="list">
+            <a onclick="jumpHomePage(event)">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256M400 179V64h-48v69"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+              </svg>
+              <span class="text" name="homePage">ホームページ</span>
+            </a>
+          </li>
+          <li class="list">
+            <a onclick="jumpMyPage(event)">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                />
+                <path
+                  d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                />
+              </svg>
+              <span class="text" name="myPage">マイページ</span>
+            </a>
+          </li>
+          <li class="list">
+            <a onclick="jumpCampaignPage(event)">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                />
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M360 94.59V296M443.13 212.87L296 360M417.41 360H216M299.13 443.13l-144-144M152 416V216M68.87 299.13l144-144M94.59 152H288M212.87 68.87L360 216"
+                />
+              </svg>
+              <span class="text" name="campaignPage">キャンペーン</span>
+            </a>
+          </li>
+          <li class="list active">
+            <a onclick="jumpCouponPage(event)">
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                  d="M366.05 146a46.7 46.7 0 01-2.42-63.42 3.87 3.87 0 00-.22-5.26l-44.13-44.18a3.89 3.89 0 00-5.5 0l-70.34 70.34a23.62 23.62 0 00-5.71 9.24h0a23.66 23.66 0 01-14.95 15h0a23.7 23.7 0 00-9.25 5.71L33.14 313.78a3.89 3.89 0 000 5.5l44.13 44.13a3.87 3.87 0 005.26.22 46.69 46.69 0 0165.84 65.84 3.87 3.87 0 00.22 5.26l44.13 44.13a3.89 3.89 0 005.5 0l180.4-180.39a23.7 23.7 0 005.71-9.25h0a23.66 23.66 0 0114.95-15h0a23.62 23.62 0 009.24-5.71l70.34-70.34a3.89 3.89 0 000-5.5l-44.13-44.13a3.87 3.87 0 00-5.26-.22 46.7 46.7 0 01-63.42-2.32z"
+                />
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-miterlimit="10"
+                  stroke-width="32"
+                  stroke-linecap="round"
+                  d="M250.5 140.44l-16.51-16.51M294.52 184.46l-11.01-11M338.54 228.49l-11-11.01M388.07 278.01l-16.51-16.51"
+                />
+              </svg>
+              <span class="text" name="couponPage">クーポン</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </section>
+    <div class="container1">
+      <table class="couponUsable">
+        <span>
+          <thead class="hederUsable">
+            <tr>
+              <th>利用できるクーポン一覧</th>
+              <th class="right">期限切れ</th>
+            </tr>
+          </thead>
+        </span>
+
+        <tbody>
+          <td class="left"><a href="#">クーポン1</a></td>
+          <td class="middle">金額</td>
+          <td>2024.02.25まで</td>
+        </tbody>
+        <tbody>
+          <td class="left"><a href="#">クーポン1</a></td>
+          <td class="middle">割引</td>
+          <td>2024.03.01まで</td>
+        </tbody>
+        <tbody>
+          <td class="left"><a href="#">クーポン1</a></td>
+          <td class="middle">金額</td>
+          <td>2024.02.25まで</td>
+        </tbody>
+        <tbody>
+          <td class="left"><a href="#">クーポン1</a></td>
+          <td class="middle">割引</td>
+          <td>2024.03.01まで</td>
+        </tbody>
+      </table>
+    </div>
+    <div class="container2">
+      <table class="couponUnusable">
+        <thead class="hederUnusable">
+          <tr>
+            <th class="gray">利用できないクーポン一覧</th>
+          </tr>
+        </thead>
+        <tbody class="unusable">
+          <td class="left"><a href="#">クーポンa</a></td>
+          <td class="middle">割引</td>
+          <td>2023.03.01まで</td>
+        </tbody>
+        <tbody class="unusable">
+          <td class="left"><a href="#">クーポンa</a></td>
+          <td class="middle">割引</td>
+          <td>2023.03.01まで</td>
+        </tbody>
+        <tbody class="unusable">
+          <td class="left"><a href="#">クーポンa</a></td>
+          <td class="middle">割引</td>
+          <td>2023.03.01まで</td>
+        </tbody>
+        <tbody class="unusable">
+          <td class="left"><a href="#">クーポンa</a></td>
+          <td class="middle">割引</td>
+          <td>2023.03.01まで</td>
+        </tbody>
+      </table>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="../js/tab.js"></script>
+    <script src="../js/pagination.js"></script>
+  </body>
+</html>

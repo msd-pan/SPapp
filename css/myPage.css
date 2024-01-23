@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* 浮动盒子 */
+.box {
+  position: relative;
+}
+.box .square {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(-40px);
+  }
+
+  50% {
+    transform: translate(40px);
+  }
+}
+
+.box .square:nth-child(1) {
+  top: -20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+}
+.box .square:nth-child(2) {
+  top: 250px;
+  left: -300px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.box .square:nth-child(3) {
+  bottom: 1px;
+  right: -50px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+.box .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+.box .square:nth-child(5) {
+  top: 80px;
+  left: 600px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+}
+.box .square:nth-child(6) {
+  top: 450px;
+  left: 700px;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+/* 该画面特有部分的样式 */
+.header {
+  position: absolute;
+  width: 650px;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 100px; /* 负的 height，使其上移 */
+}
+
+.header form table {
+  width: 500px;
+}
+
+.header form table tr input {
+  width: 100%;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  color: #564949;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+td .ouboBox {
+  position: absolute;
+  margin-right: 20px;
+}
+
+h2 {
+  display: flex;
+  position: absolute;
+  margin-top: 120px;
+  z-index: 1;
+}
+
+.logOutBtn {
+  position: absolute;
+  margin-right: -500px;
+  margin-top: -350px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: #fff;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  outline: 1px solid white;
+}
+
+.oubo {
+  position: absolute;
+  margin-top: 430px;
+  margin-right: -500px;
+}
+
+.moneyBtn {
+  position: absolute;
+  width: 350px;
+  font-size: larger;
+  font-weight: 600;
+  margin-top: 460px;
+}
+
+/* 弹出框主体 */
+.money {
+  position: absolute;
+  width: 512px;
+  height: 200px;
+  z-index: 9999;
+  display: none;
+  background-color: white;
+  /* 这里要注意绝对定位的盒子怎么在屏幕显示居中 */
+  left: 50%;
+  margin-left: -256px;
+  margin-top: 142px;
+  border: 1px solid gray;
+}
+/* 弹出框标题 */
+.money-title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: move;
+}
+.money-title span a {
+  text-decoration: none;
+  border: 1px solid gray;
+  font-size: 12px;
+  color: black;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+}
+
+/* 弹出表单 */
+.money-input {
+  margin: 20px 0px 30px 0px;
+}
+.money-input label {
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  width: 90px;
+  padding-left: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+.money-input input.list-input {
+  height: 35px;
+  line-height: 35px;
+  width: 350px;
+  text-indent: 5px;
+}
+/* 弹出框弹出按钮 */
+.moneySubmit {
+  width: 260px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid gray;
+  background-color: white;
+  margin-left: 120px;
+  font-weight: 700;
+}
+
+.moneySubmit:hover {
+  background: rgb(180, 176, 176);
+}
+
+#closeBtn:hover {
+  background: rgb(180, 176, 176);
+}
+
+/* 遮盖层 */
+.bg {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: fixed;
+  opacity: 0.3;
+  -webkit-opacity: 0.3;
+  -moz-opacity: 0.3;
+  display: none;
+}
+
+/* 金额输入成功信息提示 */
+.msgPopup {
+  /* display: none; */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 600px;
+  height: 30px;
+  border: 1px solid #12eeee;
+  top: 150px;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+td.td_left {
+  width: 120px;
+}

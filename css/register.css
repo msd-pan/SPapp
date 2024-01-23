@@ -1,0 +1,289 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* 总体磨砂背景 */
+body {
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+  z-index: 0;
+}
+
+section .color {
+  position: absolute;
+  filter: blur(150px);
+  z-index: 0;
+}
+/* 背景三色盒子 */
+section .color:nth-child(1) {
+  top: -350px;
+  width: 600px;
+  height: 600px;
+  background: #ff359b;
+  z-index: 0;
+}
+
+section .color:nth-child(2) {
+  bottom: -150px;
+  left: 100px;
+  width: 500px;
+  height: 500px;
+  background: #fffd87;
+  z-index: 0;
+}
+
+section .color:nth-child(3) {
+  bottom: 50px;
+  right: 100px;
+  width: 300px;
+  height: 300px;
+  background: hsl(191, 100%, 50%);
+  z-index: 0;
+}
+/* 浮动盒子 */
+.box {
+  position: relative;
+}
+.box .square {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(-40px);
+  }
+
+  50% {
+    transform: translate(40px);
+  }
+}
+
+.box .square:nth-child(1) {
+  top: -20px;
+  left: 300px;
+  width: 100px;
+  height: 100px;
+}
+.box .square:nth-child(2) {
+  top: 150px;
+  left: -400px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.box .square:nth-child(3) {
+  bottom: -10px;
+  left: 260px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+.box .square:nth-child(4) {
+  bottom: -80px;
+  right: 340px;
+  width: 50px;
+  height: 50px;
+}
+.box .square:nth-child(5) {
+  top: 270px;
+  left: 260px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+}
+.box .square:nth-child(6) {
+  top: 450px;
+  right: 400px;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+/* 该画面特有部分的样式 */
+/* 设定placeholder内字体颜色 */
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: black;
+  font-size: smaller;
+}
+
+.rg_center {
+  position: absolute;
+  width: 600px;
+  min-height: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 注册页面特有样式 */
+.rg_center form table {
+  width: 500px;
+}
+
+.rg_center form table tr {
+  width: 100%;
+}
+
+.rg_center form table td {
+  padding: 5px;
+  text-align: left; /* 默认左对齐 */
+}
+
+.rg_center form table td.label-column {
+  text-align: right; /* 设置该列右对齐 */
+}
+
+.rg_center form table td label {
+  display: block;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.rg_center form table td.input-column {
+  text-align: right; /* 设置该列右对齐 */
+}
+
+.rg_center form table td input[type="submit"] {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+.rg_center form table td input[type="radio"] {
+  cursor: pointer;
+  width: 20px;
+}
+
+.rg_center form table td input[type="date"] {
+  color: black;
+}
+
+.td_right {
+  width: 300px;
+}
+
+.td_left {
+  width: 150px;
+}
+
+/* div form table tr {
+  top: 30px;
+  align-items: center;
+  justify-content: center;
+} */
+
+div form table tr input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  color: #1e39c0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.warnningMsg {
+  height: 20px;
+}
+
+.activeMsg {
+  color: red;
+}
+
+#postBtn {
+  position: absolute;
+  top: 300px;
+  left: 550px;
+  width: 40px;
+  height: 28px;
+  border: none;
+  outline: none;
+  border-radius: 35px;
+  background: #fff;
+  color: #666;
+  font-weight: 600;
+}
+
+#postBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#postBtn:active {
+  background: rgb(12, 169, 253);
+}
+
+.disabled {
+  background: #fff;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.active {
+  cursor: pointer;
+  color: #666;
+  font-weight: bold;
+}
+#btn_sub.active:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.registerPopup {
+  /* display: none; */
+  display: flex;
+  z-index: 3;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: fit-content;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+.registerPopup .popMain {
+  margin: 20px;
+}
+.popMain {
+  margin: 4px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}
+
+.necessary {
+  color: red;
+  position: absolute;
+  left: 210px;
+}
